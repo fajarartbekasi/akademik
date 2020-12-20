@@ -1,0 +1,32 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.jumbotron {
+    padding: 3rem 14rem;
+    margin-bottom: 2rem;
+    background-size: 99%;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.-mt{
+    margin-top: -90px;
+}
+.lable-menu{
+    color: #4C1D95;
+    fill: #4C1D95;
+}
+.lable-menu:hover{
+    color: #6D28D9;
+    fill: #6D28D9;
+}
