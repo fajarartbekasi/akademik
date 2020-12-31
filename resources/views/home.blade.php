@@ -3,9 +3,9 @@
 @section('content')
         @role('admin')
             <main role="main" class="mb-3">
-                <div class="jumbotron" style="background-image: url('img/bg.png'); background-size: 99%;">
+                <div class="jumbotron" >
                     <div class="container">
-                        <h1 class="display-3 ">Laravel Akademik</h1>
+                        <h1 class="display-3 fs-6">Laravel Akademik</h1>
                         <p class="text-muted">
                             Start youre journey, from here.
                         </p>
@@ -16,7 +16,7 @@
 
             <div class="container -mt">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 pt-3">
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="d-flex ailgn-items-center justify-content-between lable-menu">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 pt-3">
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="d-flex ailgn-items-center justify-content-between lable-menu">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 pt-3">
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="d-flex ailgn-items-center justify-content-between lable-menu">

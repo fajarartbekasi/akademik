@@ -22,6 +22,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::get('user/create', [App\Http\Controllers\User\UserController::class, 'create'])->name('user.create');
+Route::post('user/store', [App\Http\Controllers\User\UserController::class, 'store'])->name('user.store');
+
+
 Route::group(['prefix'=>'management'], function(){
     Route::get('user', [App\Http\Controllers\Management\ManagementuserController::class, 'index'])->name('management.user');
 
