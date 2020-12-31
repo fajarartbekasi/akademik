@@ -5,7 +5,7 @@
             <main role="main" class="mb-3">
                 <div class="jumbotron" >
                     <div class="container">
-                        <h1 class="display-3 fs-6">Laravel Akademik</h1>
+                        <h1 class="text-wrap font-weight-bold">Laravel Akademik</h1>
                         <p class="text-muted">
                             Start youre journey, from here.
                         </p>
