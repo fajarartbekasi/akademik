@@ -10998,3 +10998,13 @@ a.text-dark:focus {
   color: #6D31FF;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: #6D28D9;
+  fill: #6D28D9;
+}
+
+.nav-link:hover .navbar-light:hover .navbar-nav:hover {
+  color: #6D28D9;
+  fill: #6D28D9;
+}
+

@@ -40,3 +40,13 @@ Route::group(['prefix'=>'mapel'], function(){
     Route::get('/', [App\Http\Controllers\Mapel\MapelController::class,'index'])->name('mapel');
     Route::post('', [App\Http\Controllers\Mapel\MapelController::class,'store'])->name('mapel.store');
 });
+
+Route::group(['prefix'=>'grades'], function(){
+    route::get('/',[App\Http\Controllers\Grade\GradeController::class,'index'])->name('grades');
+    route::post('store',[App\Http\Controllers\Grade\GradeController::class,'store'])->name('grades.store');
+});
+
+Route::group(['prefix'=>'rooms'], function(){
+    route::get('/',[App\Http\Controllers\Room\RoomController::class,'index'])->name('rooms');
+    route::post('store',[App\Http\Controllers\Room\RoomController::class,'store'])->name('rooms.store');
+});
