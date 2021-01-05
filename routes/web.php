@@ -35,3 +35,8 @@ Route::group(['prefix'=>'management'], function(){
 
     Route::get('walas',[App\Http\Controllers\Management\WalasController::class, 'index'])->name('management.walas');
 });
+
+Route::group(['prefix'=>'mapel'], function(){
+    Route::get('/', [App\Http\Controllers\Mapel\MapelController::class,'index'])->name('mapel');
+    Route::post('', [App\Http\Controllers\Mapel\MapelController::class,'store'])->name('mapel.store');
+});

@@ -76,9 +76,7 @@
                                             </span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <li><a class="dropdown-item" href="{{route('mapel')}}">Data Pelajaran</a></li>
                                         </ul>
                                     </div>
                                 </div>
