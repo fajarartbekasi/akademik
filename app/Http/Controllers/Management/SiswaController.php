@@ -19,4 +19,19 @@ class SiswaController extends Controller
         return view('management.siswa', compact('siswas'));
 
     }
+    public function create()
+    {
+        $roles = Role::where('name', 'siswa');
+        return view('management.student.create', compact('roles'));
+    }
+    public function edit($id)
+    {
+        $data = [
+            'user'  => User::findOrFail($id),
+            'rooms' => Room::all(),
+        ];
+
+
+        return view('management.student.edit', $data);
+    }
 }

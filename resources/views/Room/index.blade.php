@@ -36,6 +36,7 @@
                                 </svg>
 
                             </button>
+                            <a href="{{rotue('/home')}}" class="btn btn-info">Back</a>
                         </div>
                     </form>
 

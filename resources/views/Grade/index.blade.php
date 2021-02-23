@@ -21,6 +21,7 @@
                                 </svg>
 
                             </button>
+                            <a href="{{route('home')}}" class="btn btn-info">Back</a>
                         </div>
                     </form>
 

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
+<div class="container pt-5">
     <div class="card border-0">
         <div class="card-body">
             <div class="col-md-12" >
                 <div class="alert alert-info" style="margin-top: -40px;">
-                    Silahkan masukan informasi dibawah ini dengan benar dan lengkap.
+                    Silahkan masukan data siswa pada kolom dibawah ini dengan benar.
                 </div>
             </div>
             <form action="{{route('user.store')}}" method="post">
@@ -24,16 +24,13 @@
                             <input type="text" name="email" class="form-control" id="">
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="level">Akses</label>
                             <select name="roles" id="level" class="form-control">
                                 <option value="">Pilih akses</option>
                                 @foreach ($roles as $role)
-                                    <option value="{{$role->id}}">
-                                        {{$role->name}}
-                                    </option>
+                                    <option value="{{$role->id}}">{{$role->name}}</option>
                                 @endforeach
                             </select>
                         </div>

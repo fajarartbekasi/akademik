@@ -17,12 +17,12 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedInteger('user_id');
-            $table->string('alamat');
-            $table->string('gender');
-            $table->string('photo');
-            $table->string('religion');
-            $table->string('tempat_tanggal_lahir');
-            $table->string('phone');
+            $table->string('alamat')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('tempat_tanggal_lahir')->nullable();
+            $table->string('phone')->nullable();
         });
     }
 

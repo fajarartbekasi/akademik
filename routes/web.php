@@ -30,6 +30,7 @@ Route::group(['prefix'=>'management'], function(){
     Route::get('user', [App\Http\Controllers\Management\ManagementuserController::class, 'index'])->name('management.user');
 
     Route::get('siswa',[App\Http\Controllers\Management\SiswaController::class, 'index'])->name('management.siswa');
+    Route::get('siswa/create',[App\Http\Controllers\Management\SiswaController::class, 'create'])->name('management.siswa.create');
 
     Route::get('guru',[App\Http\Controllers\Management\GuruController::class, 'index'])->name('management.guru');
 
@@ -49,4 +50,14 @@ Route::group(['prefix'=>'grades'], function(){
 Route::group(['prefix'=>'rooms'], function(){
     route::get('/',[App\Http\Controllers\Room\RoomController::class,'index'])->name('rooms');
     route::post('store',[App\Http\Controllers\Room\RoomController::class,'store'])->name('rooms.store');
+});
+
+
+Route::group(['prefix' => 'users'], function(){
+    route::get('/student/{user}',[App\Http\Controllers\Management\SiswaController::class, 'edit'])->name('users.student');
+});
+
+
+Route::group(['prefix' => 'students'], function(){
+    route::get('/', [App\Http\Controllers\Walas\StudentController::class,'index'])->name('students');
 });

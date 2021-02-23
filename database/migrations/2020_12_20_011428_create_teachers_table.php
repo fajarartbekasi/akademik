@@ -17,9 +17,9 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('room_id');
-            $table->string('nip')->unique();
-            $table->string('jabatan');
+            $table->unsignedInteger('room_id')->nullable();
+            $table->string('nip')->nullable();
+            $table->string('jabatan')->nullable();
         });
     }
 

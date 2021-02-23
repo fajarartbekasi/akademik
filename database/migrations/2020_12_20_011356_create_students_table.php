@@ -17,8 +17,8 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('room_id');
-            $table->string('nisn')->unique();
+            $table->unsignedInteger('room_id')->nullable();
+            $table->string('nisn')->nullable()->unique();
         });
     }
 

@@ -116,6 +116,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mt-4 mb-4">
+                    @include('layouts.sidebar')
+                </div>
+            </div>
+
+        @endrole
+
+        @role('walas')
+
+            <main role="main" class="mb-3">
+                <div class="jumbotron" >
+                    <div class="container">
+                        <h1 class="text-wrap font-weight-bold">Laravel Akademik</h1>
+                        <h2 class="text-wrap font-weight-bold">Hello, {{Auth::user()->name}}</h2>
+                        <p class="text-muted">
+                            Start youre journey, from here.
+                        </p>
+                        <p><a class="btn btn-outline-primary btn-lg" href="#" role="button">Lessons &raquo;</a></p>
+                    </div>
+                </div>
+            </main>
+
+            <div class="container">
+                <div class="row">
+                     @include('layouts.sidebar')
+                </div>
             </div>
         @endrole
 @endsection
