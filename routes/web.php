@@ -30,7 +30,7 @@ Route::group(['prefix'=>'management'], function(){
     Route::get('user', [App\Http\Controllers\Management\ManagementuserController::class, 'index'])->name('management.user');
 
     Route::get('siswa',[App\Http\Controllers\Management\SiswaController::class, 'index'])->name('management.siswa');
-    Route::get('siswa/create',[App\Http\Controllers\Management\SiswaController::class, 'create'])->name('management.siswa.create');
+
 
     Route::get('guru',[App\Http\Controllers\Management\GuruController::class, 'index'])->name('management.guru');
 

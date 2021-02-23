@@ -50,6 +50,7 @@
                         <button type="submit" class="btn btn-info">
                             Add new members
                         </button>
+                        <a href="{{route('home')}}" class="btn btn-secondary">Home</a>
                     </div>
                 </div>
             </form>
