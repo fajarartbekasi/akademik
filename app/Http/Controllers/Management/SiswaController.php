@@ -14,7 +14,9 @@ class SiswaController extends Controller
     }
     public function index()
     {
-        $siswas = Role::with('users')->where('name','siswa')->paginate(5);
+        $siswas = User::whereHas('roles', function($q){
+            $q->where('roles.name', '=', 'siswa');
+        })->paginate(5);
 
         return view('management.siswa', compact('siswas'));
 

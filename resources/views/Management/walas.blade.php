@@ -59,11 +59,11 @@
                             <tbody>
                                 @foreach($walas as $guru)
                                     <tr>
-                                        <td>{{$guru->users->first()->name}}</td>
-                                        <td>{{$guru->users->first()->email}}</td>
+                                        <td>{{$guru->name}}</td>
+                                        <td>{{$guru->email}}</td>
                                         <td>
                                             <span class="badge bg-info text-white">
-                                                {{$guru->name}}
+                                                {{$guru->roles->first()->name}}
                                             </span>
                                         </td>
                                         <td>{{$guru->created_at}}</td>

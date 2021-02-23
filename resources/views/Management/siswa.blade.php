@@ -61,11 +61,11 @@
                             <tbody>
                                 @foreach($siswas as $siswa)
                                     <tr>
-                                        <td>{{$siswa->users->first()->name}}</td>
-                                        <td>{{$siswa->users->first()->email}}</td>
+                                        <td>{{$siswa->name}}</td>
+                                        <td>{{$siswa->email}}</td>
                                         <td>
                                             <span class="badge bg-info text-white">
-                                                {{$siswa->name}}
+                                                {{$siswa->roles->first()->name}}
                                             </span>
                                         </td>
                                         <td>{{$siswa->created_at}}</td>
@@ -95,7 +95,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-
                         {{$siswas->links()}}
                     </div>
                 </div>

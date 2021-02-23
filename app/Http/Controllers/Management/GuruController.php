@@ -15,7 +15,9 @@ class GuruController extends Controller
 
     public function index()
     {
-        $gurus = Role::with('users')->where('name','guru')->paginate(5);
+        $gurus = User::whereHas('roles', function($q){
+            $q->where('roles.name', '=', 'guru');
+        })->paginate(5);
 
         return view('management.guru', compact('gurus'));
     }
