@@ -9,7 +9,7 @@
                         @csrf
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="name" id="" class="form-control" placeholder="Nama pelajaran">
+                                <input type="text" name="name" id="" class="form-control" placeholder="Nama ruangan">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -36,7 +36,7 @@
                                 </svg>
 
                             </button>
-                            <a href="{{rotue('/home')}}" class="btn btn-info">Back</a>
+                            <a href="{{route('home')}}" class="btn btn-info">Back</a>
                         </div>
                     </form>
 

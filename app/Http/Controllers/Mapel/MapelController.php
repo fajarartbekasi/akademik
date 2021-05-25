@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mapel;
 
 use App\Models\Mapel;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,14 @@ class MapelController extends Controller
 {
     public function index()
     {
-        $mapels = Mapel::paginate(5);
-        return view('Mapel.index' ,compact('mapels'));
+        $array = [
+            'users'  => User::whereHas('roles', function($role){
+                                    $role->whereNotIn('roles.name', ['admin','siswa']);
+                            })->get(),
+            'mapels' => Mapel::paginate(5),
+        ];
+
+        return view('Mapel.index' , $array);
     }
 
     public function store()
@@ -24,7 +31,8 @@ class MapelController extends Controller
 
     private function validateRequest(){
         return request()->validate([
-            'name'  => 'required',
+            'user_id'  => 'required',
+            'name'     => 'required',
         ]);
     }
 }

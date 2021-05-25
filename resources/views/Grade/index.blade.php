@@ -7,9 +7,24 @@
                 <div class="card-body">
                     <form action="{{route('grades.store')}}" method="post" class="row justify-content-center">
                         @csrf
-                        <div class="col-md-10">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" name="name" id="" class="form-control" placeholder="Grades">
+                                <select name="user_id" class="form-control" id="">
+                                    <option value="">Pilih Walikelas</option>
+                                    @foreach($users as $user)
+                                        <option value="{{$user->id}}">{{$user->name}} - {{$user->roles->first()->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="" placeholder="Nama Kelas....">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" name="grade" class="form-control" id="" placeholder="Jurusan....">
                             </div>
                         </div>
                         <div class="col-auto">
@@ -36,7 +51,7 @@
                         <tbody>
                             @foreach($grades as $grade)
                                 <tr>
-                                    <td>{{$grade->name }}</td>
+                                    <td>{{$grade->name }} - {{$grade->grade }}</td>
                                     <td>{{$grade->created_at}}</td>
                                     <td>
                                         <form action="">

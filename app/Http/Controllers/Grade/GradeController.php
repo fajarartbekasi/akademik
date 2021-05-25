@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Grade;
 
+use App\Models\User;
 use App\Models\Grade;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,9 +11,14 @@ class GradeController extends Controller
 {
     public function index()
     {
-        $grades = Grade::paginate(5);
+        $arrays = [
+            'users'  => User::whereHas('roles', function($role){
+                                    $role->whereNotIn('roles.name', ['admin','siswa']);
+                            })->get(),
+            'grades' => Grade::paginate(5),
+        ];
 
-        return view('Grade.index', compact('grades'));
+        return view('Grade.index', $arrays);
     }
 
     public function store()
@@ -25,7 +31,9 @@ class GradeController extends Controller
     private function validateRequest(){
 
         return request()->validate([
-            'name' => 'required'
+            'user_id' => 'required',
+            'name' => 'required',
+            'grade' => 'required',
         ]);
     }
 }
