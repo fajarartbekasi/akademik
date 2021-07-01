@@ -11012,6 +11012,10 @@ a.text-dark:focus {
   padding-top: 3.5rem !important;
 }
 
+.mt-4 .my-4 {
+  margin-top: 6.5rem !important;
+}
+
 .file-upload-wrapper {
   position: relative;
   width: 100%;

@@ -60,4 +60,9 @@ Route::group(['prefix' => 'users'], function(){
 
 Route::group(['prefix' => 'students'], function(){
     route::get('/', [App\Http\Controllers\Walas\StudentController::class,'index'])->name('students');
+    route::get('/show-profile/{user}',[App\Http\Controllers\Profile\StudentController::class,'show'])->name('students.show-profile');
+});
+
+Route::group(['prefix' => 'schedules'], function(){
+    route::get('/', [App\Http\Controllers\ScheduleController::class,'index'])->name('schedules');
 });

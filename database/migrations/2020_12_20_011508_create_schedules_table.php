@@ -18,6 +18,8 @@ class CreateSchedulesTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('mapel_id');
             $table->unsignedInteger('teacher_id');
+            $table->unsignedInteger('room_id');
+            $table->unsignedInteger('grade_id');
             $table->string('jam');
         });
     }

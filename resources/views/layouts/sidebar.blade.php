@@ -6,6 +6,11 @@
                 Grades
             </a>
         </li>
+        <li class="list-group-item border-0">
+            <a href="{{route('schedules')}}" class="lable-menu">
+                Schedules
+            </a>
+        </li>
         @endrole
         @role('walas')
 

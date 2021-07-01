@@ -16,7 +16,8 @@ class CreateWalasTable extends Migration
         Schema::create('walas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedInteger('teacher_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('teacher_id')->nullable();
         });
     }
 

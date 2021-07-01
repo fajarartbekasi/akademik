@@ -17,9 +17,14 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('room_id')->nullable();
-            $table->string('nip')->nullable();
+            $table->string('nuptk')->nullable();
+            $table->string('agama')->nullable();
+            $table->string('jenis_kelamin')->nullable();
             $table->string('jabatan')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tanggal_lahir')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('telp')->nullable();
         });
     }
 

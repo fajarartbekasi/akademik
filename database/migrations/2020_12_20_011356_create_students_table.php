@@ -19,6 +19,11 @@ class CreateStudentsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('room_id')->nullable();
             $table->string('nisn')->nullable()->unique();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tanggal_lahir')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('telp')->nullable();
         });
     }
 

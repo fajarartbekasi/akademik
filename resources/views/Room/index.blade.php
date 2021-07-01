@@ -17,7 +17,7 @@
                                 <select name="grade_id" class="form-control" id="">
                                     <option value="">Pilih Kelas</option>
                                     @foreach($grades as $grade)
-                                        <option value="{{$grade->id}}">{{$grade->name}}</option>
+                                        <option value="{{$grade->id}}">{{$grade->name}} - {{$grade->grade}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -53,7 +53,7 @@
                             @foreach($rooms as $room)
                                 <tr>
                                     <td>{{$room->name }}</td>
-                                    <td>{{$room->grade->first()->name }}</td>
+                                    <td>{{$room->grade->name}} - {{$room->grade->grade}}</td>
                                     <td>{{$room->capacity}}</td>
                                     <td>
                                         <form action="">
