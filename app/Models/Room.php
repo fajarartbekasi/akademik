@@ -17,5 +17,9 @@ class Room extends Model
     {
         return $this->belongsTo(Grade::class);
     }
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 
 }

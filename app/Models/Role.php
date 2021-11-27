@@ -15,7 +15,6 @@ class Role extends \Spatie\Permission\Models\Role
         return [
             'admin',
             'guru',
-            'walas',
             'siswa',
         ];
     }

@@ -14,7 +14,8 @@
                             <p>Silahkan buat jadwal mengajar guru dengan benar disini terimakasih</p>
                         </div>
                         <div class="mt-2">
-                            <a href="http://" class="btn btn-info">Add New Schedule</a>
+                            <a href="{{route('schedules.create')}}" class="btn btn-info">Add New Schedule</a>
+                            <a href="{{route('home')}}" class="btn btn-secondary">Back</a>
                         </div>
 
                         <div class="table table-resvonsive pt-2">
@@ -22,16 +23,25 @@
                                     <thead>
                                         <tr>
                                             <th>Nama Guru</th>
-                                            <th>hari, Tanggal</th>
-                                            <th>Kelas</th>
+                                            <th>Pilihan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Ahfid Bachtiar</td>
-                                            <td>Senin, 12-01-21</td>
-                                            <td>XI RPL</td>
-                                        </tr>
+                                        @forelse ($schedules as $teacher)
+                                            <tr>
+                                                <td>{{$teacher->name}}</td>
+                                                <td>
+                                                    <a href="{{route('schedules.edit', $teacher->id)}}" class="btn btn-outline-info btn-sm">
+                                                        Add Schedule
+                                                    </a>
+                                                    <a href="{{route('schedules.show', $teacher->id)}}" class="btn btn-outline-info btn-sm">
+                                                        Show Schedules
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @empty
+
+                                        @endforelse
                                     </tbody>
 
                             </table>

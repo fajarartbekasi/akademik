@@ -45,7 +45,6 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <li><a class="dropdown-item" href="{{route('management.siswa')}}">Siswa</a></li>
                                             <li><a class="dropdown-item" href="{{route('management.guru')}}">Guru</a></li>
-                                            <li><a class="dropdown-item" href="{{route('management.walas')}}">Walas</a></li>
                                             <li><a class="dropdown-item" href="{{route('management.user')}}">All</a></li>
                                         </ul>
                                     </div>

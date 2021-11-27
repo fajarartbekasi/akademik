@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Management;
 use App\Models\User;
 use App\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Models\Room;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -35,5 +37,16 @@ class SiswaController extends Controller
 
 
         return view('management.student.edit', $data);
+    }
+    public function update(Request $request, $id)
+    {
+        $user = Student::where('user_id',$id)->first();
+
+        $user->update($request->all());
+
+        flash('Profile Siswa berhasil di update terimakasih');
+
+        return redirect()->back();
+
     }
 }

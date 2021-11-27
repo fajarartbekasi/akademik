@@ -43,46 +43,21 @@ class UserController extends Controller
 
                 $findUser = User::with('roles')->findOrFail($user->id);
                 if ($findUser->roles->first()->name == 'admin') {
-                    $profile = Profile::create([
-                        'user_id'      => $findUser->id,
-                    ]);
+
                     flash()->success('Admin berhasil ditambahkan');
+
                 }elseif ($findUser->roles->first()->name == 'guru') {
                     $teacher = Teacher::create([
                         'user_id'   => $findUser->id,
                     ]);
 
-                    if ($teacher->save()) {
-
-                        $profile = Profile::create([
-                            'user_id' => $findUser->id,
-                        ]);
-                    }
                     flash()->success('Guru berhasil ditambahkan');
-                }elseif($findUser->roles->first()->name == 'walas') {
-
-                    $teacher = Teacher::create([
-                        'user_id'   => $findUser->id,
-                    ]);
-
-                    if($teacher->save()){
-                        $walas = Wala::create([
-                            'teacher_id'    => $findUser->id,
-                        ]);
-
-                        $profile = Profile::create([
-                            'user_id' => $findUser->id,
-                        ]);
-                    }
-                    flash()->success('walas berhasil ditambahkan');
                 }elseif($findUser->roles->first()->name == 'siswa'){
                     $student = Student::create([
                         'user_id'   => $findUser->id,
                     ]);
-                    $profile = Profile::create([
-                            'user_id' => $findUser->id,
-                        ]);
-                    flash()->success('walas berhasil ditambahkan');
+
+                    flash()->success('Siswa berhasil ditambahkan');
                 }
 
         } else {

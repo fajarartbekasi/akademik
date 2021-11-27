@@ -52,32 +52,6 @@ class UsersTableSeeder extends Seeder
         $this->command->warn($teacher->email);
         $this->command->warn('Password is "laravel"');
 
-        // Walas
-        $walas = User::factory()->create([
-            'name'     => 'Adam Wathan',
-            'email'    => 'walas@laravelakademik.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('laravel'),
-        ]);
-
-        if($walas->save()){
-            $teacher = Teacher::create([
-                'user_id'   => $walas->id,
-            ]);
-            if ($teacher->save()) {
-                    $walasprofile = Wala::create([
-                    'user_id'   => $teacher->user_id,
-                    'teacher_id'   => $teacher->id,
-                ]);
-            }
-        }
-
-        $walas->assignRole('walas');
-
-        $this->command->info('>_ Here is your walas details to login:');
-        $this->command->warn($walas->email);
-        $this->command->warn('Password is "laravel"');
-
         // Siswa
         $student = User::factory()->create([
             'name'     => 'Jefryway',

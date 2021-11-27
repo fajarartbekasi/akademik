@@ -17,10 +17,11 @@ class CreateSchedulesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedInteger('mapel_id');
-            $table->unsignedInteger('teacher_id');
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('room_id');
             $table->unsignedInteger('grade_id');
-            $table->string('jam');
+            $table->string('jam_awal');
+            $table->string('jam_akhir');
         });
     }
 

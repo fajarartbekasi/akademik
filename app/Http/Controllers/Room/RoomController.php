@@ -11,25 +11,21 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $data = [
-            'grades' => Grade::all(),
-            'rooms'  => Room::with('grade')->paginate(5),
-        ];
+        $rooms = Room::latest()->paginate(6);
 
-       return view('Room.index', $data);
+       return view('Room.index', compact('rooms'));
     }
 
     public function store()
     {
         $rooms  = Room::create($this->validateRequest());
-
+        flash('Terimakasih Kelas berhasil ditambah');
         return redirect()->back()->with('succes', 'Room berhasil dibuat');
     }
 
     private function validateRequest(){
         return request()->validate([
             'name'  => 'required',
-            'grade_id'  => 'required',
             'capacity'  => 'required',
         ]);
     }

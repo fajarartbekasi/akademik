@@ -33,7 +33,6 @@ class GradeController extends Controller
         return request()->validate([
             'user_id' => 'required',
             'name' => 'required',
-            'grade' => 'required',
         ]);
     }
 }

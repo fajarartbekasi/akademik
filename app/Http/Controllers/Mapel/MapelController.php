@@ -2,37 +2,30 @@
 
 namespace App\Http\Controllers\Mapel;
 
-use App\Models\Mapel;
 use App\Models\User;
-use App\Http\Controllers\Controller;
+use App\Models\Mapel;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class MapelController extends Controller
 {
     public function index()
     {
-        $array = [
-            'users'  => User::whereHas('roles', function($role){
-                                    $role->whereNotIn('roles.name', ['admin','siswa']);
-                            })->get(),
-            'mapels' => Mapel::paginate(5),
-        ];
+        $mapels = Mapel::latest()->paginate(6);
 
-        return view('Mapel.index' , $array);
+        return view('Mapel.index' , compact('mapels'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
 
-        $mapel = Mapel::create($this->validateRequest());
-
-        return redirect()->back()->with('success','Mapel berhasil ditambah');
-    }
-
-    private function validateRequest(){
-        return request()->validate([
-            'user_id'  => 'required',
-            'name'     => 'required',
+        $mapel = Mapel::create([
+            'kode_mapel' => Str::random(4) . '-' . time(),
+            'name'       => $request->name,
         ]);
+
+        flash('Terimakasih Mapel berhasil ditambahkan');
+        return redirect()->back()->with('success','Mapel berhasil ditambah');
     }
 }

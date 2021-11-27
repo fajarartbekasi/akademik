@@ -10,10 +10,14 @@ class Grade extends Model
     use HasFactory;
 
     protected $table = 'grades';
-    protected $guarded = [];
+    protected $fillable = ['user_id','name','grade'];
 
-    public function rooms(Type $var = null)
+    public function rooms()
     {
         return $this->hasMany(Room::class);
+    }
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

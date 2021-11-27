@@ -7,16 +7,7 @@
                 <div class="card-body">
                     <form action="{{route('mapel.store')}}" method="post" class="row justify-content-center">
                         @csrf
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <select name="user_id" id="" class="form-control">
-                                    @foreach($users as $user)
-                                        <option value="{{$user->id}}">{{$user->name}} - {{$user->roles->first()->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <input type="text" name="name" id="" class="form-control" placeholder="Nama pelajaran">
                             </div>
@@ -43,6 +34,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>Kode Mapel</th>
                                     <th>Nama Pelajaran</th>
                                     <th>Created at</th>
                                     <th>Options</th>
@@ -51,11 +43,11 @@
                             <tbody>
                                 @foreach($mapels as $mapel)
                                     <tr>
+                                        <td>{{$mapel->kode_mapel }}</td>
                                         <td>{{$mapel->name }}</td>
                                         <td>{{$mapel->created_at}}</td>
                                         <td>
                                             <form action="">
-                                                <a href="http://" class="btn btn-light">Show</a>
                                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                             </form>
                                         </td>

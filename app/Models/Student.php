@@ -12,6 +12,6 @@ class Student extends Model
     protected $table = 'students';
 
     protected $fillable = [
-        'user_id'
+        'user_id','room_id','nisn','tempat_lahir','tanggal_lahir','alamat','gender','telp'
     ];
 }

@@ -12,4 +12,9 @@ class Mapel extends Model
     protected $table ='mapels';
 
     protected $guarded = [];
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 }

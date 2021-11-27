@@ -74,6 +74,8 @@
         </nav>
 
         <main class="">
+            @include('flash::message')
+            @include('layouts._errors')
             @yield('content')
         </main>
     </div>

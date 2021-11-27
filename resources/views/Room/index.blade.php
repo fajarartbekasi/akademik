@@ -7,22 +7,12 @@
                 <div class="card-body">
                     <form action="{{route('rooms.store')}}" method="post" class="row ">
                         @csrf
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div class="form-group">
                                 <input type="text" name="name" id="" class="form-control" placeholder="Nama ruangan">
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <select name="grade_id" class="form-control" id="">
-                                    <option value="">Pilih Kelas</option>
-                                    @foreach($grades as $grade)
-                                        <option value="{{$grade->id}}">{{$grade->name}} - {{$grade->grade}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div class="form-group">
                                 <input type="number" name="capacity" id="" class="form-control" >
                             </div>
@@ -43,8 +33,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Room</th>
-                                <th>Grade</th>
+                                <th>Name</th>
                                 <th>Created at</th>
                                 <th>Options</th>
                             </tr>
@@ -53,7 +42,6 @@
                             @foreach($rooms as $room)
                                 <tr>
                                     <td>{{$room->name }}</td>
-                                    <td>{{$room->grade->name}} - {{$room->grade->grade}}</td>
                                     <td>{{$room->capacity}}</td>
                                     <td>
                                         <form action="">

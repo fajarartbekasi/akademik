@@ -33,8 +33,6 @@ Route::group(['prefix'=>'management'], function(){
 
 
     Route::get('guru',[App\Http\Controllers\Management\GuruController::class, 'index'])->name('management.guru');
-
-    Route::get('walas',[App\Http\Controllers\Management\WalasController::class, 'index'])->name('management.walas');
 });
 
 Route::group(['prefix'=>'mapel'], function(){
@@ -55,6 +53,7 @@ Route::group(['prefix'=>'rooms'], function(){
 
 Route::group(['prefix' => 'users'], function(){
     route::get('/student/{user}',[App\Http\Controllers\Management\SiswaController::class, 'edit'])->name('users.student');
+    route::patch('/student/update/{user}',[App\Http\Controllers\Management\SiswaController::class, 'update'])->name('users.student.update');
 });
 
 
@@ -65,4 +64,11 @@ Route::group(['prefix' => 'students'], function(){
 
 Route::group(['prefix' => 'schedules'], function(){
     route::get('/', [App\Http\Controllers\ScheduleController::class,'index'])->name('schedules');
+    route::get('/create', [App\Http\Controllers\ScheduleController::class,'create'])->name('schedules.create');
+    route::post('/store', [App\Http\Controllers\ScheduleController::class,'store'])->name('schedules.store');
+
+    route::get('/edit/{teacher}', [App\Http\Controllers\ScheduleController::class,'edit'])->name('schedules.edit');
+    route::get('/show/{user}', [App\Http\Controllers\ScheduleController::class,'show'])->name('schedules.show');
 });
+
+Route::get('https://api.banghasan.com/quran/format/json/surat', [App\Http\Controllers\ScheduleController::class,'test'])->name('test');

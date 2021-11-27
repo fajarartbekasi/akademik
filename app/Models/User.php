@@ -40,6 +40,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 
 }
