@@ -33,6 +33,8 @@ Route::group(['prefix'=>'management'], function(){
 
 
     Route::get('guru',[App\Http\Controllers\Management\GuruController::class, 'index'])->name('management.guru');
+    Route::get('guru/edit/{user}',[App\Http\Controllers\Management\GuruController::class, 'edit'])->name('management.guru.edit');
+    Route::patch('guru/update/{user}',[App\Http\Controllers\Management\GuruController::class, 'update'])->name('management.guru.update');
 });
 
 Route::group(['prefix'=>'mapel'], function(){

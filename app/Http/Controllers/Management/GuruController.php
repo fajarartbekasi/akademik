@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Management;
 use App\Models\Role;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -20,5 +21,21 @@ class GuruController extends Controller
         })->paginate(5);
 
         return view('management.guru', compact('gurus'));
+    }
+    public function edit($id)
+    {
+        $teacher = User::findOrFail($id);
+
+        return view('management.teacher.edit', compact('teacher'));
+    }
+    public function update(Request $request, $id)
+    {
+        $user = Teacher::where('user_id', $id)->first();
+
+        $user->update($request->all());
+
+        flash('Profile Guru berhasil di update terimakasih');
+
+        return redirect()->back();
     }
 }
