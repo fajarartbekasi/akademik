@@ -21,6 +21,10 @@ class UserPolicy
     {
         return $user->hasRole('admin');
     }
+    public function update(User $user)
+    {
+        return $user->hasRole('admin');
+    }
     public function destroy(User $user)
     {
         return $user->hasRole('admin');

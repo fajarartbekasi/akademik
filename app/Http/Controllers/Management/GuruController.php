@@ -10,15 +10,16 @@ use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
 
     public function index()
     {
-        $this->authorize('index', Teacher::class);
+        $this->authorize('index', User::class);
 
-        $gurus = User::whereHas('roles', function($q){
+        $gurus = User::whereHas('roles', function ($q) {
             $q->where('roles.name', '=', 'guru');
         })->paginate(5);
 
@@ -26,7 +27,7 @@ class GuruController extends Controller
     }
     public function edit($id)
     {
-        $this->authorize('edit', Teacher::class);
+        $this->authorize('edit', User::class);
 
         $teacher = User::findOrFail($id);
 
@@ -34,7 +35,7 @@ class GuruController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $this->authorize('update', Teacher::class);
+        $this->authorize('update', User::class);
 
         $user = Teacher::where('user_id', $id)->first();
 
