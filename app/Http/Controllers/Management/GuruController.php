@@ -16,6 +16,8 @@ class GuruController extends Controller
 
     public function index()
     {
+        $this->authorize('index', Teacher::class);
+
         $gurus = User::whereHas('roles', function($q){
             $q->where('roles.name', '=', 'guru');
         })->paginate(5);
@@ -24,12 +26,16 @@ class GuruController extends Controller
     }
     public function edit($id)
     {
+        $this->authorize('edit', Teacher::class);
+
         $teacher = User::findOrFail($id);
 
         return view('management.teacher.edit', compact('teacher'));
     }
     public function update(Request $request, $id)
     {
+        $this->authorize('update', Teacher::class);
+
         $user = Teacher::where('user_id', $id)->first();
 
         $user->update($request->all());

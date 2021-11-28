@@ -15,6 +15,8 @@ class ManagementuserController extends Controller
 
     public function index()
     {
+        $this->authorize('index', User::class);
+
         $users = User::latest()->paginate(5);
 
         return view('Management.all', compact('users'));

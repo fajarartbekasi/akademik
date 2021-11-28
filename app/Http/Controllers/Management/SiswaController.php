@@ -16,6 +16,8 @@ class SiswaController extends Controller
     }
     public function index()
     {
+        $this->authorize('index', Student::class);
+
         $siswas = User::whereHas('roles', function($q){
             $q->where('roles.name', '=', 'siswa');
         })->paginate(5);
@@ -25,11 +27,15 @@ class SiswaController extends Controller
     }
     public function create()
     {
+        $this->authorize('create', Student::class);
+
         $roles = Role::where('name', 'siswa');
         return view('management.student.create', compact('roles'));
     }
     public function edit($id)
     {
+        $this->authorize('edit', Student::class);
+
         $data = [
             'user'  => User::findOrFail($id),
             'rooms' => Room::all(),
@@ -40,6 +46,8 @@ class SiswaController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $this->authorize('update', Student::class);
+
         $user = Student::where('user_id',$id)->first();
 
         $user->update($request->all());
