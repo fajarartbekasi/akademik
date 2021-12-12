@@ -19,8 +19,8 @@ class RoomController extends Controller
     public function store()
     {
         $rooms  = Room::create($this->validateRequest());
-        flash('Terimakasih Kelas berhasil ditambah');
-        return redirect()->back()->with('succes', 'Room berhasil dibuat');
+
+        return redirect()->back()->with('status', 'Terimakasih telah menambahkan room baru');
     }
 
     private function validateRequest(){

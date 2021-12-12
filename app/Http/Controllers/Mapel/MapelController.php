@@ -24,8 +24,6 @@ class MapelController extends Controller
             'kode_mapel' => Str::random(4) . '-' . time(),
             'name'       => $request->name,
         ]);
-
-        flash('Terimakasih Mapel berhasil ditambahkan');
-        return redirect()->back()->with('success','Mapel berhasil ditambah');
+        return redirect()->back()->with('status','terimakasih telah manambahkan mata pelajaran baru');
     }
 }

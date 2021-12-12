@@ -47,8 +47,8 @@ class ScheduleController extends Controller
             'jam_akhir' => $request->jam_akhir,
         ]);
 
-        flash('Thanks schedule success added');
-         return redirect()->back();
+
+         return redirect()->back()->with('status','Terimakasih telah menambahkan jadwal mengajar untuk '.$schedules->user->name);
     }
     public function show($id)
     {

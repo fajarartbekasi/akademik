@@ -71,6 +71,6 @@ Route::group(['prefix' => 'schedules'], function(){
 
     route::get('/edit/{teacher}', [App\Http\Controllers\ScheduleController::class,'edit'])->name('schedules.edit');
     route::get('/show/{user}', [App\Http\Controllers\ScheduleController::class,'show'])->name('schedules.show');
-});
 
-Route::get('https://api.banghasan.com/quran/format/json/surat', [App\Http\Controllers\ScheduleController::class,'test'])->name('test');
+    route::get('teacher',[App\Http\Controllers\Schedules\ScheduleController::class, 'index'])->name('schedules.teacher');
+});

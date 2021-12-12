@@ -25,7 +25,7 @@ class GradeController extends Controller
     {
         $grades = Grade::create($this->validateRequest());
 
-        return redirect()->back()->with('success','grade berhasil ditambah');
+        return redirect()->back()->with('status','Terimakasih telah manambahkan grade baru');
     }
 
     private function validateRequest(){

@@ -10904,11 +10904,14 @@ a.text-dark:focus {
 }
 
 .jumbotron {
-  background-image: url("/img/bg.png");
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
   background-position: center;
   background-size: cover;
-  height: 350px;
   width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 @media (min-width: 480px) {
@@ -10930,7 +10933,7 @@ a.text-dark:focus {
 }
 
 .-mt {
-  margin-top: -90px;
+  margin-top: -100px;
 }
 
 .lable-menu {
@@ -10966,17 +10969,18 @@ a.text-dark:focus {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #6D31FF;
+  color: #db2777;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #6D31FF;
+  border: 1px solid;
+  border-image-source: linear-gradient(to left, #f857a6, #ff5858);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-login:focus {
-  outline: none !important;
-  border: 1px solid #6D31FF;
-  box-shadow: 0 0 1px #6D31FF;
+  border: 1px solid;
+  border-image-source: linear-gradient(to left, #f857a6, #ff5858);
+  color: #db2777;
 }
 
 .text-indigo-600 {
@@ -11078,5 +11082,161 @@ a.text-dark:focus {
   display: block;
   cursor: pointer;
   width: 100%;
+}
+
+.btn-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: #ff5858;
+  border: 0;
+}
+
+.btn-toggle:hover,
+.btn-toggle:focus {
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
+  color: white;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+  color: white;
+}
+
+.btn-toggle[aria-expanded=true] {
+  color: white;
+}
+
+.btn-toggle[aria-expanded=true]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  display: inline-flex;
+  padding: 0.1875rem 0.5rem;
+  margin-top: 0.125rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+}
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
+  color: white;
+}
+
+.badge {
+  display: inline-block;
+  padding: 1.1em 0, 1em;
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 100rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.bg-red-600 {
+  background-color: #fee2e2;
+  color: #f87171;
+}
+
+.badge:hover {
+  color: #fee2e2;
+  background-color: #f87171;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
+}
+
+.text-pink-600 {
+  color: #db2777;
+}
+
+.bg-gray-50 {
+  background-color: #f8fafc;
+}
+
+.text-pink-600:hover {
+  background-image: linear-gradient(to right, #FF61D2, #FE9090);
+  color: #fee2e2;
+  border-radius: 100rem;
+}
+
+.text-gray-800 {
+  color: rgba(31, 41, 55, 0.7);
+}
+
+.btn-exotic {
+  background-image: linear-gradient(to right, #FF61D2, #FE9090);
+  color: #fee2e2;
+}
+
+.label-red-600 {
+  font-size: 20px;
+  background: -webkit-linear-gradient(#FF61D2, #FE9090);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f87171;
+}
+
+.btn-toggle-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
+  color: white;
+  border: 0;
+}
+
+.btn-toggle-back:hover {
+  background-color: white;
+  -o-border-image: linear-gradient(to right, #f857a6, #ff5858);
+     border-image: linear-gradient(to right, #f857a6, #ff5858);
+  background-image: none;
+  color: #ff5858;
+  border: 3px solid;
+}
+
+.alert-exotic {
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
+  color: white;
+}
+
+.text-orange-500 {
+  color: #ff5858;
+  font-size: 50px;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: white;
+  background-image: linear-gradient(to right, #f857a6, #ff5858);
+  border: 1px solid #ff5858;
+}
+
+.page-link:hover {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #ff5858;
+  background-image: none;
+  background-color: white;
+  border: 1px solid #ff5858;
 }
 
