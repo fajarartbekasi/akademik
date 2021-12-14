@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AclSeed::class,
             UsersTableSeeder::class,
+            GradeSeeder::class,
+            MapelSeeder::class,
+            RoomSeeder::class,
+            ScheduleSeeder::class,
         ]);
     }
 

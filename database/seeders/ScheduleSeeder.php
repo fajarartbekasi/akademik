@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Grade;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class GradeSeeder extends Seeder
+class ScheduleSeeder extends Seeder
 {
     use HasFactory;
     /**
@@ -17,10 +16,13 @@ class GradeSeeder extends Seeder
      */
     public function run()
     {
-       DB::table('grades')->insert([
-            'user_id'   => '2',
-            'name'      => 'XI',
-            'grade'      => 'XI RPL',
+        DB::table('schedules')->insert([
+            'mapel_id'   => '1',
+            'user_id'    => '2',
+            'room_id'    => '1',
+            'grade_id'   => '1',
+            'jam_awal'   => '07:00',
+            'jam_akhir'  => '08:00',
         ]);
     }
 }
